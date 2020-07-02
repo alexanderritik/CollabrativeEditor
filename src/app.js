@@ -15,8 +15,8 @@ const server=http.createServer(app)
 const io=socketio(server)
 
 // this is used in herouk to provide the port by heroku 
-// const port=process.env.PORT || 3000;
-const port=3000;
+const port=process.env.PORT || 3000;
+// const port=3000;
 const publicdirectorypath=path.join(__dirname,'../public')
 
 
