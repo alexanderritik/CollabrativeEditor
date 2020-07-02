@@ -27,7 +27,6 @@ This is a multi dimensional in which many number of editor can work together on 
 * [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
-* [License](#license)
 * [Contact](#contact)
 
 
@@ -43,8 +42,6 @@ Here's why:
 * We can do real time chat for clearing doubts
 * We can do pair editing
 
-Of course, no one template will serve all projects since your needs may be different.
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
 ### Built With
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
@@ -113,10 +110,7 @@ Contributions are what make the open source community such an amazing place to b
 
 
 
-<!-- LICENSE -->
-## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
 
 
 
