@@ -1,0 +1,17 @@
+{
+  "name": "editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js -e html,js,hbs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "codejar": "^3.0.0",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
+}

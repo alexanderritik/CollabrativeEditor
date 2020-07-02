@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Mutli-Dimensonal Coder</title>
+</head>
+<body>
+
+  
+  <div id="mySidenav"  class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <!-- <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a> -->
+  </div>
+  <!-- Use any element to open the sidenav -->
+  <button type="button" class="btn btn-warning" id="openNavbar" onclick="openNav()" style="width: 100%;"><h2>Connections</h2></button>
+
+
+
+<div class="row">
+
+<div id="main" class="col-9" >
+  
+
+    <div class="container">
+      <div class="wrapper">
+          <!-- <div class="row"> -->
+            <h1>Mutli-Dimensonal Editor
+            <label class="switch" >
+                <input type="checkbox" id="checkLive" value="live">
+                <span class="slider round" ></span>
+              </label>
+            </h1>
+          <!-- </div> -->
+        
+        <input type="text" placeholder="Title">
+        <div class="options">
+          <button  onClick="transform('bold', null)">
+            <i class="fas fa-bold"></i>
+          </button>
+          <button onClick="transform('italic', null)">
+            <i class="fas fa-italic"></i>
+          </button>
+          <button onClick="transform('strikeThrough', null)">
+            <i class="fas fa-strikethrough"></i>
+          </button>
+          <button onClick="transform('underline', null)">
+            <i class="fas fa-underline"></i>
+          </button>
+          <div class="seperator"></div>
+          <button onClick="transform('justifyLeft', null)">
+            <i class="fas fa-align-left"></i>
+          </button>
+          <button onClick="transform('justifyCenter', null)">
+            <i class="fas fa-align-center"></i>
+          </button>
+          <button onClick="transform('justifyRight', null)">
+            <i class="fas fa-align-right"></i>
+          </button>
+          <div class="seperator"></div>
+          <button onClick="transform('insertOrderedList', null)">
+            <i class="fas fa-list-ol"></i>
+          </button>
+          <button onClick="transform('insertUnorderedList', null)">
+            <i class="fas fa-list-ul"></i>
+          </button>
+          <div class="seperator"></div>
+          <select onChange="transform('fontName', this.value)">
+            <option disabled default>Font</option>
+            <option value="Times New Roman">Times</option>
+            <option value="Arial">Arial</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Arial">Verdana</option>
+          </select>
+          <div class="seperator"></div>
+          <input type="number" onChange="transform('fontSize', this.value)" value="4" max="14" min="1" tab="4"></input>
+        </div>
+    
+        <iframe name="editor" id="editor" style="overflow:auto"></iframe>
+      </div>
+      
+
+    </div>
+
+    <!-- sending message form  -->
+    <form id="message-form" action="POST" style="width: 100%;">
+      <div class="input-group" style="padding-left: 10pt; padding-right: 10pt; padding-top: 10pt; border-radius: 10px;font-size: larger;">
+        <input id="msg" class="form-control" aria-label="With textarea"></input>
+        <button id="check" class="input-group-text bg-primary text-white" style="width: 150px;">Send Message</button>
+        <div  class="input-group-prepend">
+            
+          </div>
+      </div>
+    </form>
+  <!-- closing id editor -->
+
+</div>
+
+<!-- opening of chat bar -->
+<div id="chatbox" class="col-3" style="padding: 10px;">
+
+  <div id="message" style="overflow:auto;height: 726px;">
+    <!-- <div class="darker btn-outline-primary">
+      <p>Hey! I'm fine. Thanks for asking!</p>
+      <span class="time-left">11:01</span>
+    </div>
+    <div class="lighter btn-outline-info">
+      <p>Hello. How are you today?</p>
+      <span >11:00</span>
+    </div> -->
+  </div>
+
+
+</div>
+ 
+
+
+</div>
+
+<!-- this is used to print the message -->
+
+<script id="message-template" type="text/html">
+<div id="{{id}}" class="darker btn-outline-primary">
+  <p> {{text}}</p>
+  <span class="time-left">{{time}}- {{username}}</span>
+</div>
+</script>
+
+<!-- this is dynamic template to show room member -->
+<script id="sidebar-template" type="text/html">
+  <a href="#">Room - {{room}}</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <!-- {{#users}} -->
+  <a href="#">{{username}}</a>
+  <!-- {{/users}} -->
+</script>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.0/moment.min.js"></script>    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.3/qs.js"></script>    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<script src="/socket.io/socket.io.js"></script>
+<!-- this is for editor page  -->
+<script src="js/js.js"></script>
+
+<!-- this is for socket io connection -->
+<script src="js/editor.js"></script>
+
+
