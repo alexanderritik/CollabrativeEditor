@@ -1,6 +1,6 @@
 # Multi-Dimensional-Text-Editor
 This is a multi dimensional in which many number of editor can work together on one platform with an live chatting system provided
-
+[DEMO](https://live-editor-uqkz.onrender.com/)
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -11,7 +11,7 @@ This is a multi dimensional in which many number of editor can work together on 
   <h3 align="center">Live - Editor </h3>
 
   <p align="center">
-    <a href="https://live-texteditor.herokuapp.com/">View Demo</a>
+    <a href="https://live-editor-uqkz.onrender.com/">View Demo</a>
 </p>
 
 
